@@ -5,6 +5,6 @@ export const CHANGE_USER_ID = 'CHANGE_USER_ID';
 export const CHANGE_TITLE = 'CHANGE_TITLE';
 export const ADDED = 'ADDED';
 export const UPDATE_CHECKBOX = 'UPDATE_CHECKBOX';
-
+export const CLEAR = 'CLEAR';
 
 

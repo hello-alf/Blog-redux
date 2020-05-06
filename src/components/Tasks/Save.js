@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { changeUserId, changeTitle, add, edit } from '../../actions/taskActions'
+import { changeUserId, changeTitle, add, edit, clear } from '../../actions/taskActions'
 import Spinner from '../General/Spinner'
 import Fatal from '../General/Fatal'
 import { Redirect } from 'react-router-dom'
@@ -20,6 +20,8 @@ class Save extends Component {
       const task = tasks[user_id][task_id];
       changeUserId(task.userId)
       changeTitle(task.title)
+    }else{
+      this.props.clear()
     }
   }
 
@@ -123,7 +125,8 @@ const mapDispatchToProps = {
   changeUserId,
   changeTitle,
   add,
-  edit
+  edit,
+  clear
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Save);

@@ -5,7 +5,8 @@ import {
   CHANGE_USER_ID,
   CHANGE_TITLE,
   ADDED,
-  UPDATE_CHECKBOX
+  UPDATE_CHECKBOX,
+  CLEAR
 } from '../types/taskTypes';
 
 const INITIAL_STATE = {
@@ -58,6 +59,12 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         tasks: action.payload
+      }
+    case CLEAR:
+      return{
+        ...state,
+        user_id: '',
+        title: '',
       }
     default:
       return state

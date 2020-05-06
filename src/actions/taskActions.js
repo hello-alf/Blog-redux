@@ -5,7 +5,8 @@ import {
   CHANGE_USER_ID,
   CHANGE_TITLE,
   ADDED,
-  UPDATE_CHECKBOX
+  UPDATE_CHECKBOX,
+  CLEAR
 } from '../types/taskTypes';
 
 // devuleve una promsa para ser llamad por el reducer,
@@ -135,4 +136,11 @@ export const deleted = (task_id) => async (dispatch) => {
       payload: 'No se puede borrar'//error.message
     });
   }
+}
+
+export const clear = () => async (dispatch) => {
+  dispatch({
+    type: CLEAR,
+    payload: {}
+  });
 }

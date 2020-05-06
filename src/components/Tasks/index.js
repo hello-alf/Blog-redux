@@ -17,7 +17,10 @@ class Tasks extends Component{
   }
 
   componentDidUpdate() {
-		if(!Object.keys(this.props.tasks).length){
+    const {
+      loading
+    } = this.props
+		if(!Object.keys(this.props.tasks).length && !loading){
       this.props.getTasks()
     } 
 	}
